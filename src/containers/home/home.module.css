@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: radial-gradient(circle at top, #222737, #0c0d10 60%);
+  background-image: radial-gradient(circle at top, #222737, #0c0d10 80%);
   padding: 24px 20px
 }
 
@@ -57,7 +57,7 @@
   background: -webkit-linear-gradient(
     0deg,
     #fabbff 0%,
-    #b179ff 80%,
+    #b179ff 90%,
     #6dddff 150%
   );
   -webkit-background-clip: text;
