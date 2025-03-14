@@ -1,5 +1,5 @@
-import styles from "./page.module.css";
+import { Home } from "@/containers/home";
 
-export default function Home() {
-  return <div className={styles.page}>PAGE</div>;
+export default function Page() {
+  return <Home />;
 }
