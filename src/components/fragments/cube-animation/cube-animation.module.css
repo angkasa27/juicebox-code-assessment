@@ -7,7 +7,7 @@
   margin: 24px 0;
 }
 
-.wrapper > img {
+.wrapper > div > img {
   padding: 0 40px;
   object-fit: contain;
   width: 100%;

@@ -4,6 +4,7 @@ import { LenisProvider } from "@/providers/lenis-provider";
 import { Header } from "@/components/fragments/header";
 
 import localFont from "next/font/local";
+import { GsapProvider } from "@/providers/gsap-provider";
 
 const Bagoss = localFont({
   src: "../../public/fonts/Bagoss/Bagoss.ttf",
@@ -28,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${Bagoss.variable} ${Sohne.variable}`}>
-        <LenisProvider>
-          <Header />
-          {children}
-        </LenisProvider>
+        <GsapProvider>
+          <LenisProvider>
+            <Header />
+            {children}
+          </LenisProvider>
+        </GsapProvider>
       </body>
     </html>
   );

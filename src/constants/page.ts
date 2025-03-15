@@ -1,4 +1,4 @@
-export const HERO_FLOATING = [
+export const FLOATING_TEXT = [
   "WA businesses feel confident about future growth",
   "AI cant replace creativity",
   "Sales measure true success",
