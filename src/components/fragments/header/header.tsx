@@ -1,19 +1,27 @@
+"use client";
 import styles from "./header.module.css";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const pathname = usePathname();
+
   return (
     <header className={`${styles.header} container`}>
-      <Button variant="icon" aria-label="Back">
-        <Image
-          aria-hidden
-          alt=""
-          src="/icons/icon-arrow-left.svg"
-          width={20}
-          height={20}
-        />
-      </Button>
+      <div style={{ width: "46px", height: "46px" }}>
+        {pathname !== "/" && (
+          <Button variant="icon" aria-label="Back">
+            <Image
+              aria-hidden
+              alt=""
+              src="/icons/icon-arrow-left.svg"
+              width={20}
+              height={20}
+            />
+          </Button>
+        )}
+      </div>
       <Image
         aria-label="Juicebox Logo"
         alt="Juicebox Logo"

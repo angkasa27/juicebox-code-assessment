@@ -6,7 +6,7 @@ import { LayoutContext } from "@/app/(main)/layout";
 
 export function Home() {
   const { cubeRef } = useContext(LayoutContext);
-  console.log(cubeRef);
+
   return (
     <main
       className={styles["main-page"]}
