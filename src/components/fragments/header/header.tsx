@@ -1,35 +1,35 @@
-import { ButtonIcon } from "@/components/ui/button-icon/button-icon";
 import styles from "./header.module.css";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export const Header = () => {
   return (
-    <header className={styles.header}>
-      <ButtonIcon>
+    <header className={`${styles.header} container`}>
+      <Button variant="icon" aria-label="Back">
         <Image
           aria-hidden
+          alt=""
           src="/icons/icon-arrow-left.svg"
-          alt="Arrow left icon"
           width={20}
           height={20}
         />
-      </ButtonIcon>{" "}
+      </Button>
       <Image
-        aria-hidden
+        aria-label="Juicebox Logo"
+        alt="Juicebox Logo"
         src="/icons/logo-light.svg"
-        alt="Logo Light"
         width={123}
         height={29}
       />
-      <ButtonIcon>
+      <Button variant="icon" aria-label="Restart">
         <Image
           aria-hidden
-          src="/icons/icon-refresh.svg"
-          alt="Arrow left icon"
+          alt=""
+          src="/icons/icon-restart.svg"
           width={20}
           height={20}
         />
-      </ButtonIcon>
+      </Button>
     </header>
   );
 };

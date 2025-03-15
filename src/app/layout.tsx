@@ -16,7 +16,7 @@ const Sohne = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "juicebox",
+  title: "Juicebox",
   description: "This is a project for juicebox Frontend Developer Code Test",
 };
 
