@@ -1,0 +1,30 @@
+.input {
+  position: relative;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.25rem;
+  transition: all 0.1s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  padding: 0 12px;
+  overflow: hidden;
+  height: 60px;
+  transition: border 0.3s ease-in-out;
+}
+
+.input input {
+  outline: none;
+  border: none;
+  text-align: left;
+  background-color: transparent;
+  color: var(--color-white);
+  font-family: Sohne;
+  width: 100%;
+  caret-color: #65d5eb;
+}
+
+.input:has(input[aria-invalid="true"]) {
+  border: 1px solid rgb(150, 10, 10);
+}

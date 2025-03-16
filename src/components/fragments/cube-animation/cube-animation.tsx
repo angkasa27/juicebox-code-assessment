@@ -24,24 +24,6 @@ export const CubeAnimation = forwardRef<
     }
   }, []);
 
-  // useGSAP(() => {
-  //   if (!imageContainerRef.current || !floatingTextRef.current) return;
-
-  //   const tl = gsap.timeline();
-  //   const text = floatingTextRef.current.querySelectorAll("p");
-
-  //   tl.fromTo(
-  //     imageContainerRef.current.querySelector("img"),
-  //     { opacity: 0, scale: 0.5 },
-  //     { opacity: 1, scale: 1, duration: 0.6, ease: "power3.inOut" }
-  //   ).fromTo(
-  //     text,
-  //     { opacity: 0, y: "100%" },
-  //     { opacity: 1, y: "0%", duration: 0.6, ease: "power3.out", stagger: 0.1 },
-  //     "+=1.5"
-  //   );
-  // }, []);
-
   useGSAP(() => {
     if (!imageContainerRef.current || !floatingTextRef.current) return;
 

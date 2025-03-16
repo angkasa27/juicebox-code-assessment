@@ -1,0 +1,30 @@
+.tutorial {
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100dvh - 86px);
+  gap: 24px;
+}
+
+.lottie-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.lottie-wrapper > div {
+  width: 30px;
+  height: 30px;
+}
+
+.text-guide {
+  text-align: center;
+  font-family: Bagoss;
+  font-size: 19px;
+  line-height: 120%;
+  text-wrap: pretty;
+  flex: 1 1 0%;
+  white-space: pre-wrap;
+}

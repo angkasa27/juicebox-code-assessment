@@ -9,11 +9,13 @@ import { Button } from "@/components/ui/button";
 import styles from "./tutorial.module.css";
 import { TUTORIAL_STEPS } from "@/constants";
 import Swiper from "swiper";
+import { useRouter } from "next/navigation";
 
 export function Tutorial() {
   const { cubeRef } = useContext(LayoutContext);
   const [swiper, setSwiper] = useState<Swiper | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const router = useRouter();
 
   const isLastSlide = useMemo(
     () => activeIndex === TUTORIAL_STEPS.length - 1,
@@ -27,8 +29,8 @@ export function Tutorial() {
   };
 
   const handleNextPage = () => {
-    
-  }
+    router.push("/form");
+  };
 
   const handleButtonClick = () => {
     if (isLastSlide) {
@@ -37,7 +39,6 @@ export function Tutorial() {
       handleNextSlide();
     }
   };
-  
 
   const handleSlideChange = () => {
     if (swiper) {
