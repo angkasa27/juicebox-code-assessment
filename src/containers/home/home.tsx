@@ -5,8 +5,10 @@ import { useContext, useEffect, useRef } from "react";
 import { LayoutContext } from "@/app/(main)/layout";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/navigation";
 
 export function Home() {
+  const router = useRouter();
   const { cubeRef } = useContext(LayoutContext);
 
   const mainRef = useRef<HTMLElement>(null);
@@ -55,6 +57,34 @@ export function Home() {
       );
   });
 
+  const onClickAction = () => {
+    if (!headlineRef.current || !ctaRef.current) return;
+    const tl = gsap.timeline();
+    const words = headlineRef.current.querySelectorAll("span");
+
+    tl.to(
+      words,
+      {
+        opacity: 0,
+        y: "100%",
+        duration: 0.3,
+        ease: "power3.out",
+      }
+      // "-=0.1"
+    ).to(
+      ctaRef.current,
+      {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power3.out",
+        onComplete: () => {
+          router.push("/tutorial");
+        },
+      },
+      "-=0.1"
+    );
+  };
+
   return (
     <main
       className={`${styles["main-page"]} hidden`}
@@ -71,7 +101,12 @@ export function Home() {
         <span>with</span> <span>current</span> <span>industry</span>{" "}
         <span>opinions.</span>
       </h1>
-      <Button ref={ctaRef} variant="primary" aria-label="Get a reality check">
+      <Button
+        ref={ctaRef}
+        variant="primary"
+        aria-label="Get a reality check"
+        onClick={onClickAction}
+      >
         Get a reality check
       </Button>
     </main>

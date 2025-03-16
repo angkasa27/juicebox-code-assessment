@@ -1,7 +1,0 @@
-export const FLOATING_TEXT = [
-  "WA businesses feel confident about future growth",
-  "AI cant replace creativity",
-  "Sales measure true success",
-  "Human connection drives WA business",
-  "The primary barrier to digital\ntransformation is financial investment",
-];
