@@ -1,15 +1,13 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import styles from "./home.module.css";
-import { useContext, useEffect, useRef } from "react";
-import { LayoutContext } from "@/app/(main)/layout";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRouter } from "next/navigation";
+import { useHome } from "./actions/use-home";
 
 export function Home() {
-  const router = useRouter();
-  const { cubeRef } = useContext(LayoutContext);
+  const { handleNextPage, cubeRef } = useHome();
 
   const mainRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -77,9 +75,7 @@ export function Home() {
         opacity: 0,
         duration: 0.3,
         ease: "power3.out",
-        onComplete: () => {
-          router.push("/tutorial");
-        },
+        onComplete: handleNextPage,
       },
       "-=0.1"
     );

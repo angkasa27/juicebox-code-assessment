@@ -1,6 +1,4 @@
 "use client";
-import { useContext, useMemo, useState } from "react";
-import { LayoutContext } from "@/app/(main)/layout";
 import { Swiper as SwiperContainer, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,44 +6,18 @@ import { Pagination } from "swiper/modules";
 import { Button } from "@/components/ui/button";
 import styles from "./tutorial.module.css";
 import { TUTORIAL_STEPS } from "@/constants";
-import Swiper from "swiper";
-import { useRouter } from "next/navigation";
 import { SlideAnimation } from "@/components/fragments/slide-animation";
+import { useTutorial } from "./actions/use-tutorial";
 
 export function Tutorial() {
-  const { cubeRef } = useContext(LayoutContext);
-  const [swiper, setSwiper] = useState<Swiper | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const router = useRouter();
-
-  const isLastSlide = useMemo(
-    () => activeIndex === TUTORIAL_STEPS.length - 1,
-    [activeIndex]
-  );
-
-  const handleNextSlide = () => {
-    if (swiper) {
-      swiper.slideNext();
-    }
-  };
-
-  const handleNextPage = () => {
-    router.push("/form");
-  };
-
-  const handleButtonClick = () => {
-    if (isLastSlide) {
-      handleNextPage();
-    } else {
-      handleNextSlide();
-    }
-  };
-
-  const handleSlideChange = () => {
-    if (swiper) {
-      setActiveIndex(swiper.activeIndex);
-    }
-  };
+  const {
+    handleSlideChange,
+    handleSwiper,
+    activeIndex,
+    isLastSlide,
+    handleButtonClick,
+    cubeRef,
+  } = useTutorial();
 
   return (
     <div
@@ -59,7 +31,7 @@ export function Tutorial() {
         pagination
         tabIndex={1}
         onSlideChange={handleSlideChange}
-        onSwiper={(swiper) => setSwiper(swiper)}
+        onSwiper={handleSwiper}
         style={{ flex: "0.8 0.8 0%", margin: "-20px 0" }}
       >
         {TUTORIAL_STEPS.map((text, index) => (
