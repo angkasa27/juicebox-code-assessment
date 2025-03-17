@@ -1,0 +1,14 @@
+.text {
+  font-family: Bagoss;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 125%;
+  letter-spacing: 1%;
+  opacity: 50%;
+}
+
+.text-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

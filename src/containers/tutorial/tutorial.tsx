@@ -10,6 +10,7 @@ import styles from "./tutorial.module.css";
 import { TUTORIAL_STEPS } from "@/constants";
 import Swiper from "swiper";
 import { useRouter } from "next/navigation";
+import { SlideAnimation } from "@/components/fragments/slide-animation";
 
 export function Tutorial() {
   const { cubeRef } = useContext(LayoutContext);
@@ -63,21 +64,12 @@ export function Tutorial() {
       >
         {TUTORIAL_STEPS.map((text, index) => (
           <SwiperSlide style={{ width: "auto", height: "80%" }} key={index}>
-            <h3
-              style={{
-                fontFamily: "Bagoss",
-                fontWeight: 400,
-                fontSize: "22px",
-                lineHeight: "125%",
-                letterSpacing: "1%",
-                textAlign: "center",
-                textWrap: "pretty",
-              }}
-            >
-              {text.split(" ").map((word, idx) => (
-                <span key={idx}>{word} </span>
-              ))}
-            </h3>
+            <SlideAnimation
+              key={index}
+              index={index}
+              activeSlideIndex={activeIndex}
+              text={text}
+            />
           </SwiperSlide>
         ))}
       </SwiperContainer>
