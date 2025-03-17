@@ -1,3 +1,4 @@
+"use client"
 import { useRouter } from "next/navigation";
 import { useLayoutContext } from "@/components/hooks/use-layout-context/use-layout-context";
 

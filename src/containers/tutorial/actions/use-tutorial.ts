@@ -1,3 +1,4 @@
+"use client"
 import { useLayoutContext } from "@/components/hooks/use-layout-context/use-layout-context";
 import { TUTORIAL_STEPS } from "@/constants";
 import { useRouter } from "next/navigation";
