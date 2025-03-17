@@ -1,15 +1,11 @@
-import { forwardRef, ReactNode } from "react";
+import { forwardRef, useMemo } from "react";
 import styles from "./input.module.css";
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  error?: string;
-  required?: boolean;
-  children?: ReactNode;
-}
+import { InputProps } from "./input.type";
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ disabled, error, placeholder, children, ...props }, ref) => {
-    const isError = !!error?.length;
+    const isError = useMemo(() => !!error?.length, [error]);
+
     return (
       <div className={styles["input"]}>
         <input

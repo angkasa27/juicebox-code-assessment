@@ -1,9 +1,6 @@
 import { forwardRef } from "react";
 import styles from "./button.module.css";
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: "primary" | "secondary" | "outline" | "icon";
-}
+import { ButtonProps } from "./button.type";
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant, disabled, ...props }, ref) => (
