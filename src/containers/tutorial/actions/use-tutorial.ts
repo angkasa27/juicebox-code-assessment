@@ -25,13 +25,7 @@ export const useTutorial = () => {
     router.push("/form");
   };
 
-  const handleButtonClick = () => {
-    if (isLastSlide) {
-      handleNextPage();
-    } else {
-      handleNextSlide();
-    }
-  };
+ 
 
   const handleSlideChange = () => {
     if (swiper) {
@@ -48,7 +42,8 @@ export const useTutorial = () => {
     handleSwiper,
     activeIndex,
     isLastSlide,
-    handleButtonClick,
+    handleNextPage,
+    handleNextSlide,
     cubeRef,
   };
 };

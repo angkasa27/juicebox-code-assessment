@@ -85,7 +85,7 @@ export const SlideAnimation = ({
       time: timelineRef.current.duration(),
       duration: timelineRef.current.duration(),
       ease: "power3.inOut",
-      delay: 1,
+      delay: 2,
     });
 
     // PLAY timeline
