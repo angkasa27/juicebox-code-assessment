@@ -12,7 +12,7 @@ import { TextPlugin } from "gsap/all";
 
 gsap.registerPlugin(TextPlugin);
 
-export function Form() {
+export function DetailForm() {
   const {
     email,
     emailValidation,

@@ -1,5 +1,6 @@
-import { Form } from "@/containers/form";
+"use client"
+import { DetailForm } from "@/containers/form";
 
 export default function Page() {
-  return <Form />;
+  return <DetailForm />;
 }
