@@ -56,8 +56,7 @@ npm run start
 ├── 📂 public
 │   ├── 📂 fonts            # Custom fonts
 │   ├── 📂 icons            # SVG or icon assets
-│   ├── 📂 images           # Static images
-│   └──📂 lottie           # Lottie animation files
+│   └── 📂 images           # Static images
 ├── 📂 src
 │   ├── 📂 app              # Page routing
 │   ├── 📂 components

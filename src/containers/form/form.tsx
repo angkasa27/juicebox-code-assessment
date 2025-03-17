@@ -1,7 +1,5 @@
 "use client";
 import styles from "./form.module.css";
-import Lottie from "lottie-react";
-import animationData from "@public/lottie/JB2G_Lottie.json";
 import { InputSubmit } from "@/components/fragments/input-submit";
 import { useForm } from "./actions/use-form";
 import { useGSAP } from "@gsap/react";
@@ -9,6 +7,15 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/all";
+import dynamic from "next/dynamic";
+
+const LottieAnimation = dynamic(
+  () =>
+    import("../../components/fragments/lottie-animation").then(
+      (mod) => mod.LottieAnimation
+    ),
+  { ssr: false }
+);
 
 gsap.registerPlugin(TextPlugin);
 
@@ -123,7 +130,7 @@ export function DetailForm() {
   return (
     <div className={styles.tutorial}>
       <div className={styles["lottie-wrapper"]} ref={lottieRef}>
-        <Lottie animationData={animationData} loop autoplay />
+        <LottieAnimation />
       </div>
       <p className={styles["text-guide"]} ref={guideRef}>
         {getLabel(step)}
