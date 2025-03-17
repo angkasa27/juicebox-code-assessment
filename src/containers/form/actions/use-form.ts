@@ -1,11 +1,13 @@
 "use client";
 import { useMemo, useState } from "react";
 import { Step } from "../form.type";
+import { useRouter } from "next/navigation";
 
 export function useForm() {
   const [step, setStep] = useState<Step>("firstName");
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
+  const router = useRouter();
 
   const getLabel = (step: Step) =>
     ({
@@ -14,19 +16,15 @@ export function useForm() {
       check: `Thanks, ${firstName}! Now, it’s time to get a reality check.\n\nThis will take 2-3 minutes.`,
     }[step]);
 
-  const handleNextStep = () => {
-    if (step === "firstName") {
-      setStep("emailAddress");
-    } else if (step === "emailAddress") {
-      setStep("check");
-    }
+  const handleChangeStep = (step: Step) => {
+    setStep(step);
   };
 
-  const onChangeEmail = (value: string) => {
+  const handleChangeEmail = (value: string) => {
     setEmail(value);
   };
 
-  const onChangeFirstName = (value: string) => {
+  const handleChangeFirstName = (value: string) => {
     setFirstName(value);
   };
 
@@ -43,15 +41,20 @@ export function useForm() {
     [firstName]
   );
 
+  const handleClickContinue = () => {
+    router.push("/");
+  };
+
   return {
     email,
     emailValidation,
     firstName,
     firstNameValidation,
     getLabel,
-    handleNextStep,
-    onChangeEmail,
-    onChangeFirstName,
+    handleChangeStep,
+    handleChangeEmail,
+    handleChangeFirstName,
     step,
+    handleClickContinue,
   };
 }
