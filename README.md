@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Juicebox Indonesia - Frontend Code Assessment
 
-## Getting Started
+### Overview
 
-First, run the development server:
+This repository contains the frontend code assessment for applying to the Frontend Developer role at Juicebox Indonesia. The project is built using Next.js and includes animation libraries like GSAP and Lottie, as required in the assessment.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Getting Started
+
+Follow these steps to set up and run the project:
+
+1. Clone the Repository
+
+```git clone https://github.com/your-username/juicebox-test.git
+cd juicebox-test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
+# OR
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Run the Development Server
 
-## Learn More
+```
+npm run dev
+# OR
+yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+The project will start on http://localhost:3000.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Build for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+npm run build
+npm run start
+```
 
-## Deploy on Vercel
+### Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Next.js 15.2.2 - React framework for SSR & SSG
+- React 19 - Component-based UI development
+- GSAP - Animation library (as per the assessment requirement)
+- Lottie React - Rendering Lottie JSON animations
+- Lenis - Smooth scrolling experience
+- Swiper - Carousel and slider integration
+- TypeScript - Type safety and better developer experience
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Folder Structure
+
+```
+📦 juicebox-test
+├── 📂 public
+│   ├── 📂 fonts            # Custom fonts
+│   ├── 📂 icons            # SVG or icon assets
+│   ├── 📂 images           # Static images
+│   └──📂 lottie           # Lottie animation files
+├── 📂 src
+│   ├── 📂 app              # Page routing
+│   ├── 📂 components
+│   │   ├── 📂 fragments    # Reusable component sections
+│   │   ├── 📂 hooks        # Custom hooks
+│   │   └── 📂 ui           # UI components (buttons, inputs, etc.)
+│   ├── 📂 constants        # Static values or configuration
+│   ├── 📂 containers       # Page-level components
+│   │   ├── use-page.ts     # Page-specific logic
+│   │   ├── page.tsx        # Main page component
+│   │   ├── index.ts        # Entry point
+│   │   ├── page.type.ts    # Type definitions
+│   │   └── page.module.css # Page-specific styles
+│   └── 📂 providers        # Providers
+└── README.md               # Project documentation
+```
