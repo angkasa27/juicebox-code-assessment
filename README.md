@@ -52,7 +52,7 @@ npm run start
 ### Folder Structure
 
 ```
-📦 juicebox-test
+📦 juicebox-code-assessment
 ├── 📂 public
 │   ├── 📂 fonts            # Custom fonts
 │   ├── 📂 icons            # SVG or icon assets
