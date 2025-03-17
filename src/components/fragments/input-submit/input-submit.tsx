@@ -64,6 +64,7 @@ export const InputSubmit = ({
           marginLeft: "12px",
         }}
         onClick={onClickNext}
+        aria-label="Continue"
       >
         <Image
           aria-hidden

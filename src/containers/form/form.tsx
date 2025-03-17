@@ -156,6 +156,7 @@ export function DetailForm() {
         )}
         {step === "check" && (
           <Button
+            aria-label="Continue"
             ref={buttonRef}
             variant="secondary"
             onClick={handleClickContinue}

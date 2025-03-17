@@ -93,6 +93,7 @@ export function Tutorial() {
         variant={isLastSlide ? "secondary" : "outline"}
         onClick={onButtonClick}
         ref={buttonRef}
+        aria-label={isLastSlide ? "Get started" : "Continue"}
       >
         {isLastSlide ? "Get started" : "Continue"}
       </Button>
