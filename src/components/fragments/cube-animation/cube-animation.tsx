@@ -70,7 +70,7 @@ export const CubeAnimation = forwardRef<
     <div className={`${styles["wrapper"]} hidden`} ref={localRef} {...props}>
       <div ref={imageContainerRef}>
         <Image
-          src="/img/hero.png"
+          src="/images/hero.png"
           alt=""
           aria-hidden
           width={300}
