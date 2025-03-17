@@ -22,7 +22,7 @@ export const useTutorial = () => {
   };
 
   const handleNextPage = () => {
-    router.push("/form");
+    router.push("/detail-form");
   };
 
   const handleSlideChange = () => {
