@@ -1,11 +1,11 @@
-import { LayoutContext } from "@/app/(main)/layout";
+import { useLayoutContext } from "@/components/hooks/use-layout-context/use-layout-context";
 import { TUTORIAL_STEPS } from "@/constants";
 import { useRouter } from "next/navigation";
-import { useContext, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Swiper from "swiper";
 
 export const useTutorial = () => {
-  const { cubeRef } = useContext(LayoutContext);
+  const { cubeRef } = useLayoutContext();
   const [swiper, setSwiper] = useState<Swiper | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const router = useRouter();
@@ -24,8 +24,6 @@ export const useTutorial = () => {
   const handleNextPage = () => {
     router.push("/form");
   };
-
- 
 
   const handleSlideChange = () => {
     if (swiper) {

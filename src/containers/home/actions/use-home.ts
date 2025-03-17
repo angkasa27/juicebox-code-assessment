@@ -1,9 +1,8 @@
 import { useRouter } from "next/navigation";
-import { useContext, } from "react";
-import { LayoutContext } from "@/app/(main)/layout";
+import { useLayoutContext } from "@/components/hooks/use-layout-context/use-layout-context";
 
 export const useHome = () => {
-  const { cubeRef } = useContext(LayoutContext);
+  const { cubeRef } = useLayoutContext();
   const router = useRouter();
 
   const handleNextPage = () => {

@@ -1,12 +1,7 @@
 "use client";
 import { CubeAnimation } from "@/components/fragments/cube-animation";
-import { createContext, useState } from "react";
-
-export const LayoutContext = createContext<{
-  cubeRef: HTMLDivElement | null;
-}>({
-  cubeRef: null,
-});
+import { LayoutContext } from "@/components/hooks/use-layout-context/use-layout-context";
+import { useState } from "react";
 
 export default function RootLayout({
   children,
@@ -14,6 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [cubeRef, setCubeRef] = useState<HTMLDivElement | null>(null);
+
   return (
     <LayoutContext.Provider value={{ cubeRef }}>
       <div className={`container`}>
