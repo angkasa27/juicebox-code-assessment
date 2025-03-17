@@ -2,7 +2,12 @@
   --color-primary: #b488f2;
   --color-white: #ffffff;
   --color-dark: #0c0d10;
+  --color-dark-2: #222737;
   --color-text-white: #fafafa;
+  --color-active: #65d5eb;
+  --color-pink: #fabbff;
+  --color-error: #7a0e0e;
+  --focus: rgba(255, 255, 255, 0.5);
 }
 
 html,
@@ -17,7 +22,11 @@ body {
   font-family: Sohne, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: radial-gradient(circle at top, #222737, #0c0d10 80%);
+  background-image: radial-gradient(
+    circle at top,
+    var(--color-dark-2),
+    var(--color-dark) 80%
+  );
   min-height: 100dvh;
 }
 

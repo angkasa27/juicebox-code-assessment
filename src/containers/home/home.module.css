@@ -22,9 +22,9 @@
 .gradient-text {
   background: -webkit-linear-gradient(
     0deg,
-    #fabbff 0%,
+    var(--color-pink) 0%,
     var(--color-primary) 90%,
-    #6dddff 140%
+    var(--color-active) 140%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
